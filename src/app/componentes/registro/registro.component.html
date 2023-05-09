@@ -1,0 +1,29 @@
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+      <h2  [ngClass]="btnFormulario.inciarSesion ? 'active' :  'inactive underlineHover'" > Crear Cuenta </h2>
+     
+  
+      <form id="iniciarSesionForm">
+        <input type="text" id="user" class="fadeIn second" [(ngModel)]="user" name="user" placeholder="Usuario">
+        <input type="text" type="password" id="password"  class="fadeIn third" [(ngModel)]="password" name="password" placeholder="Contraseña">
+        <input type="text" type="password" id="repitePass"  class="fadeIn third" [(ngModel)]="repitePass" name="repitePass" placeholder="Repetir contraseña">
+        <input type="submit" class="fadeIn fourth" value="Crear Cuenta" (click)="CrearUsuario()" >
+
+        <input type="submit" class="fadeIn fourth" value="Volver Login" style="margin-bottom: 20px;color: #56baed;background-color: white;" [routerLink]="'/login'" >
+       
+
+        <input type="submit" style="display:none" class="fadeIn fourth" value="Usuario 1"  [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
+      </form>
+  
+      
+      <div id="formFooter">
+        <a class="underlineHover" href="#">Olvido su Contraseña?</a>
+      </div>
+  
+    </div>
+    
+  </div>
+  

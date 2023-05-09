@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "labo4-2023": {
+      "hosting": {
+        "sala-de-juegos": [
+          "labo4-2023"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "labo4-2023"
+  }
+}

@@ -1,0 +1,28 @@
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Sala de Juegos</span>
+      </a>
+
+      <ul class="nav nav-pills">
+       
+        <li class="nav-item">
+            <a (click)="BtnNavsetClicked('btnJuego1','bienvenido')" [ngClass]="btnHeader.btnJuego1 ? 'nav-link active' :  'nav-link'" aria-current="page">Juego 1</a>
+        </li>
+        <li class="nav-item">
+            <a (click)="BtnNavsetClicked('btnJuego2','login')" [ngClass]="btnHeader.btnJuego2 ? 'nav-link active' :  'nav-link'">Juego 2</a>
+        </li>
+        <li class="nav-item" style="margin-left: 10px;">
+           
+            <button (click)="CerrarSesion()" type="button" class="btn btn-outline-danger">Cerrar Sesion</button>
+        </li>
+        
+     <!--
+
+     <li class="nav-item">
+            <a (click)="BtnNavsetClicked('btnContacto','inicio')"[ngClass]="btnHeader.btnContacto ? 'nav-link active' :  'nav-link'">Inicio</a>
+        </li> -->  
+      </ul>
+    </header>
+  </div>
