@@ -101,15 +101,18 @@ export class UsuariosService {
     try {
       var fecha =  new Date()
       var id = String( fecha.getTime()  )
-      const docRef = await setDoc(doc(db, publicacion, id ), {
+      const docRef = await addDoc(collection(db, publicacion ), {
         user:user,
         id: id,
         fecha: fecha
       });
-      //console.log("Document written with ID: ", docRef);
-     /* await updateDoc(docRef, {
+      
+      console.log("Document written with ID: ", docRef.id);      
+      const usuarioCreado = doc(db, publicacion, docRef.id);
+      await updateDoc(usuarioCreado, {
         id: docRef.id
-      });*/
+      });
+
       return true;
       
     } catch (e) {

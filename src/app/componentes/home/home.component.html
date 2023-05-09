@@ -8,10 +8,13 @@
       <ul class="nav nav-pills">
        
         <li class="nav-item">
-            <a (click)="BtnNavsetClicked('btnJuego1','bienvenido')" [ngClass]="btnHeader.btnJuego1 ? 'nav-link active' :  'nav-link'" aria-current="page">Juego 1</a>
+            <a (click)="BtnNavsetClicked('btnJuego1','bienvenido')" [ngClass]="btnHeader.btnJuego1 ? 'nav-link active' :  'nav-link'" aria-current="page">Mayor o Menor</a>
         </li>
         <li class="nav-item">
-            <a (click)="BtnNavsetClicked('btnJuego2','login')" [ngClass]="btnHeader.btnJuego2 ? 'nav-link active' :  'nav-link'">Juego 2</a>
+            <a (click)="BtnNavsetClicked('btnJuego2','login')" [ngClass]="btnHeader.btnJuego2 ? 'nav-link active' :  'nav-link'">Ahorcado</a>
+        </li>
+        <li class="nav-item">
+            <a (click)="BtnNavsetClicked('btnJuego3','login')" [ngClass]="btnHeader.btnJuego3 ? 'nav-link active' :  'nav-link'">Preguntados</a>
         </li>
         <li class="nav-item" style="margin-left: 10px;">
            
@@ -25,4 +28,16 @@
         </li> -->  
       </ul>
     </header>
+    <div *ngIf="btnHeader.btnJuego1">
+
+      <app-mayor-o-menor></app-mayor-o-menor>
+    </div>
+    <div *ngIf="btnHeader.btnJuego2">
+
+     <app-ahorcado></app-ahorcado>
+    </div>
+    <div *ngIf="btnHeader.btnJuego3">
+
+      <app-preguntados></app-preguntados>
+    </div>
   </div>

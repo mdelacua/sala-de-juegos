@@ -9,7 +9,7 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 })
 export class HomeComponent {
   btnInicio:any = true
-  btnHeader:any = {"btnJuego1" : true,"btnJuego2": false,"btnCerrarSesion": false }
+  btnHeader:any = {"btnJuego1" : true,"btnJuego2": false,"btnJuego3": false,"btnCerrarSesion": false }
 
   constructor(private servicioUsuario:UsuariosService, private router: Router){
            
@@ -35,6 +35,7 @@ export class HomeComponent {
 
 ngOnInit() {
   this.servicioUsuario.VerificarSesionUsuario(null,'login')
+  this.BtnNavsetClicked('btnJuego1','bienvenido')
 }
 
 

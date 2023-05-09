@@ -24,7 +24,7 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-    this.sesionUsuario = this.servicioUsuario.VerificarSesionUsuario('home',null)
+    this.sesionUsuario = this.servicioUsuario.VerificarSesionUsuario('home',null) //HACK COMENTADO
   }
 
   ngOnDestroy(){
@@ -61,7 +61,8 @@ export class LoginComponent {
 
       this.NotificaionInicioSesion('Usuario "'+this.user+'" valido!')     
       this.servicioUsuario.CrearPublicacion(this.user , 'log-registro')
-      this.router.navigate(['/home'])
+
+      this.router.navigate(['/home']) //HACK COMENTADO
     }else{      
       this.ErrorUsuario("Usuario inválido...")
      
