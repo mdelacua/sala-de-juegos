@@ -6,20 +6,26 @@ import { HomeComponent } from './home.component';
 import { PreguntadosComponent } from '../juegos/preguntados/preguntados.component';
 import { AhorcadoComponent } from '../juegos/ahorcado/ahorcado.component';
 import { MayorOMenorComponent } from '../juegos/mayor-o-menor/mayor-o-menor.component';
+import { QuienSoyComponent } from '../quien-soy/quien-soy.component';
+import { ChatComponent } from '../chat/chat.component';
+import { FormsModule } from '@angular/forms';
 
 
-@NgModule({
+@NgModule({ 
   declarations: [
     HomeComponent,
     PreguntadosComponent,
     AhorcadoComponent,
-    MayorOMenorComponent
+    MayorOMenorComponent,
+    QuienSoyComponent,
+    ChatComponent,
+    
 
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
-
+    FormsModule,
 
   ]
 })

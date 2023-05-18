@@ -4,12 +4,14 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 
 @Component({
   selector: 'app-home',
-  templateUrl: './home.component.html',
+  templateUrl: './home.component.html', 
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent {
   btnInicio:any = true
-  btnHeader:any = {"btnJuego1" : true,"btnJuego2": false,"btnJuego3": false,"btnCerrarSesion": false }
+  btnHeader:any = {"btnJuego1" : false,"btnJuego2": false,"btnJuego3": false,"btnCerrarSesion": false,"quienSoy": true }
+
+  usuario:any = null
 
   constructor(private servicioUsuario:UsuariosService, private router: Router){
            
@@ -34,8 +36,9 @@ export class HomeComponent {
 }
 
 ngOnInit() {
+  this.usuario = this.servicioUsuario.emailUsuario
   this.servicioUsuario.VerificarSesionUsuario(null,'login')
-  this.BtnNavsetClicked('btnJuego1','bienvenido')
+  this.BtnNavsetClicked('quienSoy','bienvenido')
 }
 
 

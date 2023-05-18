@@ -1,1 +1,35 @@
 <p>ahorcado works!</p>
+
+<div>
+    <h3>Letras utilizadas:</h3>
+    <div style="float: left;" *ngFor="let item1 of btnDeshabilitados">
+        <button value="item1" id="item1" >{{item1}}</button>
+    </div>
+</div>
+<br><br><br>
+<div style="display: grid;"  >
+
+    <div >
+        <div style="float: left;" *ngFor="let item1 of abecedario_qwerty1">
+            <button value="item1" id="item1" (click)="Clickbtn(item1,'uno')">{{item1}}</button>
+        </div>
+       
+    </div>
+    <div  >
+        <div style="float: left;" *ngFor="let item1 of abecedario_qwerty2">
+            <button value="item1" id="item1" (click)="Clickbtn(item1,'dos')">{{item1}}</button>
+        </div>
+       
+    </div>
+
+    <div  >
+        <div style="float: left;" *ngFor="let item1 of abecedario_qwerty3">
+            <button value="item1" id="item1" (click)="Clickbtn(item1,'tres')">{{item1}}</button>
+        </div>
+       
+    </div>
+
+</div>
+<br>
+<button (click)="ReiniciarJuego()">Reiniciar juego</button>
+<br>
