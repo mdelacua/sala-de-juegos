@@ -24,7 +24,7 @@ export class LoginComponent {
   }
 
   ngOnInit() {
-    this.sesionUsuario = this.servicioUsuario.VerificarSesionUsuario('home',null) //HACK COMENTADO
+    //this.sesionUsuario = this.servicioUsuario.VerificarSesionUsuario('home',null) //HACK COMENTADO
   }
 
   ngOnDestroy(){

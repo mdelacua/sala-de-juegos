@@ -15,6 +15,7 @@ export class ChatComponent {
   NuevoMsj() {
     console.log(this.msjNuevo)
     this.servicioChat.CrearMensaje(this.servicioUsuario.emailUsuario, this.msjNuevo)
+    this.msjNuevo = ''
   }
 
   async ngOnInit(): Promise<void> {

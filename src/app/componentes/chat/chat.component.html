@@ -1,16 +1,20 @@
 
 <div class="container">
 
-    <div class="col-md-8 order-md-1">
+    <div class=" order-md-1">
         <div id="msjChat">
             <div *ngIf="msjs.length > 0">
                 <ul class="list-group mb-3">
                     <li *ngFor="let item of msjs" class="list-group-item d-flex justify-content-between lh-condensed">
-                      <div>
-                        <h6 class="my-0">{{item.user}}</h6>
-                        
+                      <div style="display: grid;">
+
+                        <div style="float: right;">
+                          <h6 class="my-0">{{item.user}}</h6>                          
+                        </div>
+                        <div >  
+                          <span class="text-muted">{{item.msj}}</span>
+                        </div>
                       </div>
-                      <span class="text-muted">{{item.msj}}</span>
                     </li>
                     
                   </ul>
@@ -19,9 +23,9 @@
         </div>
         <form class="needs-validation" novalidate="">
           <div class="row">
-            <div class="col-md-6 mb-3">
+            <div class=" mb-3">
               <label for="firstName">Nuevo mensaje</label>
-              <input type="text" [(ngModel)]="msjNuevo" class="form-control" id="msjNuevo" name="msjNuevo" placeholder="" value="" required="">
+              <input type="text" maxlength="25" [(ngModel)]="msjNuevo" class="form-control" id="msjNuevo" name="msjNuevo" placeholder="" value="" required="">
               <div class="invalid-feedback">
                 Valid first name is required.
               </div>

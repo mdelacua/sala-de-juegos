@@ -53,6 +53,59 @@ export class UsuariosService {
       }
     });   
   }
+
+  async VerificarSesionUsuarioGuardLogin(logeado:any){
+    
+    return new Promise<boolean>((resolve, reject) => {
+
+      this.auth1 = getAuth();
+      onAuthStateChanged(this.auth1, (user) => {
+        if (user) {        
+          
+          console.log('logeado') 
+          this.emailUsuario = user.email;    
+          this.router.navigate(['/'+logeado])          
+          resolve(false);
+
+        } else {
+          console.log('no logeado') 
+          this.emailUsuario = null         
+          resolve(true);      
+        }
+      });   
+      
+      console.log('finalizo')
+      
+    });
+
+  }
+
+  async VerificarSesionUsuarioGuardPaginaLogeada(logeado:any){
+    
+    return new Promise<boolean>((resolve, reject) => {
+
+      this.auth1 = getAuth();
+      var retorno = false
+      onAuthStateChanged(this.auth1, (user) => {
+        if (user) {        
+          
+          console.log('logeado') 
+          this.emailUsuario = user.email;                        
+          resolve(true);      
+          
+        } else {
+          console.log('no logeado') 
+          this.emailUsuario = null
+          this.router.navigate(['/'+logeado])          
+          resolve(false);
+        }
+      });   
+      
+      
+      
+    });
+
+  }
  
   async VerificarUsuarioConectado( password: any){
     this.auth1 = getAuth();

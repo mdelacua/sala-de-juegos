@@ -1,35 +1,55 @@
-<p>ahorcado works!</p>
+
 
 <div>
+    <div *ngIf="ganoResp > 0">
+        <h2>Victorias: {{ganoResp}}</h2>
+    </div>
+    <h3>Errores maximos: 5</h3>
+    <h5 *ngIf="errores > 0">Errores actuales: {{errores}}</h5>
+    <img style="width: 150px;height: 150px;" [src]="'assets/ahorcado/'+(errores + 1)+'.png'">
+    <h1>Palabra: {{palabraMostrada}}</h1>
+    
     <h3>Letras utilizadas:</h3>
     <div style="float: left;" *ngFor="let item1 of btnDeshabilitados">
-        <button value="item1" id="item1" >{{item1}}</button>
+        <button class="btn btn-primary btn-lg btn-block" value="item1" id="item1" >{{item1}}</button>
     </div>
 </div>
 <br><br><br>
-<div style="display: grid;"  >
-
+<div *ngIf="errores == 5">
+    <h1>Perdiste!</h1>
+    <h3>Palabra oculta: {{palabra}}</h3>
+</div>
+<div *ngIf="errores < 5 && !gano " style="display: grid;"  >
+    <h3>Letras disponibles:</h3>
     <div >
         <div style="float: left;" *ngFor="let item1 of abecedario_qwerty1">
-            <button value="item1" id="item1" (click)="Clickbtn(item1,'uno')">{{item1}}</button>
+            <button class="btn btn-primary btn-lg btn-block" value="item1" id="item1" (click)="Clickbtn(item1,'uno')">{{item1}}</button>
         </div>
        
     </div>
     <div  >
         <div style="float: left;" *ngFor="let item1 of abecedario_qwerty2">
-            <button value="item1" id="item1" (click)="Clickbtn(item1,'dos')">{{item1}}</button>
+            <button class="btn btn-primary btn-lg btn-block" value="item1" id="item1" (click)="Clickbtn(item1,'dos')">{{item1}}</button>
         </div>
        
     </div>
 
     <div  >
         <div style="float: left;" *ngFor="let item1 of abecedario_qwerty3">
-            <button value="item1" id="item1" (click)="Clickbtn(item1,'tres')">{{item1}}</button>
+            <button class="btn btn-primary btn-lg btn-block" value="item1" id="item1" (click)="Clickbtn(item1,'tres')">{{item1}}</button>
         </div>
        
     </div>
 
 </div>
+
+<div *ngIf="gano ">
+    <h1>
+        Ganaste!
+    </h1>
+    
+</div>
 <br>
-<button (click)="ReiniciarJuego()">Reiniciar juego</button>
+<button class="btn btn-primary btn-lg btn-block" (click)="ReiniciarJuego()">Reiniciar juego</button>
 <br>
+<input type="submit" style="display:none" class="fadeIn fourth" value="Usuario 1"  [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">

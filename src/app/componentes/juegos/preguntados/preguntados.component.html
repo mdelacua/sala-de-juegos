@@ -1,1 +1,46 @@
-<p>preguntados works!</p>
+<div>
+    <div *ngIf="gano > 0">
+        <h2>Victorias: {{gano}}</h2>
+    </div>
+    <h1>Pregunta:</h1>
+    <div>
+        <h2>{{AdivinarElPj.pregunta}}</h2>
+                
+    </div>
+    <div *ngIf="AdivinarElPj.img">
+        <img [src]="AdivinarElPj.img.data[0].jpg.image_url" alt="">
+         
+    </div>
+    <br>
+    <div id="preguntas" style="display: grid;" *ngIf="AdivinarElPj">
+        <div  style="float: left;" *ngFor="let item1 of AdivinarElPj.respuestas; let i=index">
+            <button (click)="VerficarRespuestaV2(item1, i)" style="width: 50%;margin-bottom: 12px;" class="btn btn-primary btn-lg btn-block" [value]="i" [id]="'btnResp'+i" [disabled]="deshabilitarBtn" >{{item1}}</button>
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" (click)="TraerPersonajesAnime()">Nueva pregunta</button>
+    <br>
+    <input type="submit" style="display:none" class="fadeIn fourth" value="Usuario 1"  [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
+</div>
+
+<!-- 
+    <div>
+    <div>
+        <p>Victorias: {{gano}}</p>
+    </div>
+    <h1>Pregunta:</h1>
+    <div>
+        {{preguntaActual.pregunta}}        
+    </div>
+    <br>
+    <div id="preguntas" style="display: grid;">
+        <div style="float: left;" *ngFor="let item1 of preguntaActual.respuestas; let i=index">
+            <button (click)="VerficarRespuesta(i)" style="width: 50%;margin-bottom: 12px;" class="btn btn-primary btn-lg btn-block" [value]="i" [id]="'btnResp'+i" [disabled]="deshabilitarBtn" >{{item1}}</button>
+        </div>
+    </div>
+    <br>
+    <button class="btn btn-primary btn-lg btn-block" (click)="AsignarPregunta()">Nueva pregunta</button>
+    <br>
+    
+</div>
+-->

@@ -1,14 +1,12 @@
 
 
 <div>
-    <div>
-        <p>Victorias: {{gano}}</p>
+    <div *ngIf="gano > 0">
+        <h2>Victorias: {{gano}}</h2>
     </div>
-    <div style="display: flex;">
-        
+    <div style="display: flex;">        
         
         <div>
-
             <p>Carta 1</p>
             <img *ngIf="carta" [src]="carta.cards[0].image" alt="">
         </div>
@@ -17,16 +15,20 @@
             <img *ngIf="carta2" [src]="carta2.cards[0].image" alt="">
         </div>
     </div>
+    <br>
+
     <div *ngIf="!reiniciarJuego">
 
         <p>Cual sera la siguiente carta?</p>
-        <button (click)='TraerCarta2("mayor")'>Mayor</button>
-        <button (click)='TraerCarta2("menor")'>Menor</button>
+        <button class="btn btn-primary btn-lg btn-block" (click)='TraerCarta2("mayor")'>Mayor</button>
+        <button class="btn btn-primary btn-lg btn-block" (click)='TraerCarta2("menor")'>Menor</button>
     </div>
     <div *ngIf="reiniciarJuego">
 
        
-        <button (click)='Reiniciar()'>Reiniciar Juego</button>
+        <button class="btn btn-primary btn-lg btn-block" (click)='Reiniciar()'>Reiniciar Juego</button>
         
     </div>
+    <input type="submit" style="display:none" class="fadeIn fourth" value="Usuario 1"  [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
+       
 </div>

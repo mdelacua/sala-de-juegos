@@ -1,0 +1,47 @@
+[
+    {
+        "pregunta": "¿Cuál es el océano más grande del mundo?",
+        "respuestas": ["Océano Pacífico", "Océano Atlántico", "Océano Índico", "Océano Ártico"],
+        "respuesta_correcta": 0
+    },
+    {
+        "pregunta": "¿Cuál es el país más poblado del mundo?",
+        "respuestas": ["India", "Estados Unidos", "Rusia", "China"],
+        "respuesta_correcta": 3
+    },
+    {
+        "pregunta": "¿Cuál es el monte más alto del mundo?",
+        "respuestas": ["Monte Kilimanjaro", "Monte Aconcagua", "Monte Everest", "Monte McKinley"],
+        "respuesta_correcta": 2
+    },
+    {
+        "pregunta": "¿En qué año comenzó la Segunda Guerra Mundial?",
+        "respuestas": ["1939", "1941", "1945", "1948"],
+        "respuesta_correcta": 0
+    },
+    {
+        "pregunta": "¿Cuál es el río más largo del mundo?",
+        "respuestas": ["Río Amazonas", "Río Nilo", "Río Misisipi", "Río Yangtsé"],
+        "respuesta_correcta": 1
+    },
+    {
+        "pregunta": "¿Cuál es el instrumento musical más antiguo del mundo?",
+        "respuestas": ["Piano", "Violín", "Flauta", "Arpa"],
+        "respuesta_correcta": 2
+    },
+    {
+        "pregunta": "¿Cuál es la moneda oficial de Japón?",
+        "respuestas": ["Dólar", "Euro", "Yen", "Libra"],
+        "respuesta_correcta": 2
+    },
+    {
+        "pregunta": "¿Quién pintó la Mona Lisa?",
+        "respuestas": ["Leonardo da Vinci", "Pablo Picasso", "Vincent van Gogh", "Claude Monet"],
+        "respuesta_correcta": 0
+    },
+    {
+        "pregunta": "¿Cuál es el símbolo químico del oro?",
+        "respuestas": ["Au", "Ag", "Fe", "Hg"],
+        "respuesta_correcta": 0
+    }
+]

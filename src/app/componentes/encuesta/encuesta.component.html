@@ -1,0 +1,133 @@
+<div class="container">
+    
+
+    <div class="row">
+     
+      <div class="order-md-1">
+        <h4 class="mb-3">Billing address</h4>
+
+        <form [formGroup]="form"  >
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="firstName">Nombre</label>
+              <input formControlName="nombre" class="form-control" type="text" id="firstName" placeholder="" value="" required="">
+              <div *ngIf="nombre?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(nombre?.errors)">
+                    {{nombre?.getError(error).mensaje}}
+                </small>
+              </div>
+              <div *ngIf="nombre.errors?.['required']">
+                <small class="d-block">
+                   error
+                </small>
+              </div>
+              <div *ngIf="nombre.errors?.['maxlength']">
+                <small class="d-block">
+                  maxLength
+                </small>
+              </div>
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="lastName">Apellido</label>
+              <input type="text" formControlName="apellido" class="form-control" id="lastName" placeholder="" value="" required="">
+              <div *ngIf="apellido?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(apellido?.errors)">
+                    {{apellido?.getError(error).mensaje}}
+                </small>
+              </div>
+            </div>
+          </div>
+
+         
+          <div class="mb-3">
+            <label for="address">Edad</label>
+            <input type="text" formControlName="edad" class="form-control" id="address"  required="">
+            <div *ngIf="edad?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(edad?.errors)">
+                    {{edad?.getError(error).mensaje}}
+                </small>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="address">Numero de telefono</label>
+            <input type="text" formControlName="telefono" class="form-control" id="address" placeholder="12345678" required="">
+            <div *ngIf="telefono?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(telefono?.errors)">
+                    {{telefono?.getError(error).mensaje}}
+                </small>
+            </div>
+          </div>
+
+          
+
+          <div class="row">
+            <div class="mb-3">
+              <label for="country">Como cataloga su experiencia en el sitio?</label>
+              <select formControlName="expSitio" class="custom-select d-block w-100" id="country" required="">
+                <option value="">Elija una opcion...</option>
+                <option value="1">Muy buena</option>
+                <option value="2">Intermedia</option>
+                <option value="3">Mala</option>
+              </select>
+            <div *ngIf="expSitio?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(expSitio?.errors)">
+                    {{expSitio?.getError(error).mensaje}}
+                </small>
+            </div>
+            </div>
+           
+          </div>
+          <hr class="mb-4">
+
+          <h4 class="mb-3">Los juegos le resultaron...</h4>
+
+          <div class="d-block my-3">
+            <div class="custom-control custom-radio">
+              <input formControlName="dificultad" id="credit" name="paymentMethod" type="radio" class="custom-control-input" value="Faciles" >
+              <label class="custom-control-label" for="credit">Faciles</label>
+            </div>
+            <div class="custom-control custom-radio">
+              <input formControlName="dificultad" id="debit" name="paymentMethod" type="radio" class="custom-control-input" value="Dificiles">
+              <label class="custom-control-label" for="debit">Dificiles</label>
+            </div>
+            <div *ngIf="dificultad.errors?.['required']">
+              <small class="d-block">
+                 Campo requerido.
+              </small>
+            </div>
+            <!--<div *ngIf="dificultad?.errors">
+                <small class="d-block" *ngFor="let error of obtenerErrores(dificultad?.errors)">
+                    {{dificultad?.getError(error).mensaje}}
+                </small>
+            </div>-->
+          </div>
+
+          <hr class="mb-4">
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" (change)="ocultarChat = ocultarChat? false : true;"  value="true" class="custom-control-input" id="same-address">
+            <label class="custom-control-label" for="same-address"> Deberiamos ocultar el chat al abrir un juego?</label>
+          </div>
+          <div class="custom-control custom-checkbox">
+            <input type="checkbox" (change)="juegosPorEdad = juegosPorEdad? false : true;" class="custom-control-input" id="save-info">
+            <label class="custom-control-label" for="save-info"> Deberiamos catalogar los juegos por edad?</label>
+          </div>
+          <br>
+          <div class="custom-control custom-checkbox">
+            <input formControlName="termCond" type="checkbox" class="custom-control-input" id="term-cond" value="y">
+            <label class="custom-control-label" for="term-cond"> Acepta los terminos y condiciones</label>
+          </div>
+          <div *ngIf="termCond.errors?.['required']">
+            <small class="d-block">
+              Terminos y condiciones requerido.
+            </small>
+          </div>
+          <hr class="mb-4">
+          
+          <button [disabled]="form.invalid" (click)="GuardarEncuesta()" class="btn btn-primary btn-lg btn-block" type="submit">Enviar Encuesta</button>
+        </form>
+      </div>
+    </div>
+
+    
+  </div>

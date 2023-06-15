@@ -24,6 +24,14 @@
         <li class="nav-item">
             <a (click)="BtnNavsetClicked('btnJuego3','login')" [ngClass]="btnHeader.btnJuego3 ? 'nav-link active' :  'nav-link'">Preguntados</a>
         </li>
+        <li class="nav-item">
+            <a (click)="BtnNavsetClicked('btnJuego4','login')" [ngClass]="btnHeader.btnJuego4 ? 'nav-link active' :  'nav-link'">Punteria</a>
+        </li>
+        <!--
+        <li class="nav-item">
+            <a (click)="BtnNavsetClicked('encuesta','login')" [ngClass]="btnHeader.encuesta ? 'nav-link active' :  'nav-link'">Encuesta</a>
+        </li>
+        -->
         <li class="nav-item" style="margin-left: 10px;">
            
             <button (click)="CerrarSesion()" type="button" class="btn btn-outline-danger">Cerrar Sesion</button>
@@ -35,10 +43,11 @@
             <a (click)="BtnNavsetClicked('btnContacto','inicio')"[ngClass]="btnHeader.btnContacto ? 'nav-link active' :  'nav-link'">Inicio</a>
         </li> -->  
       </ul>
+      
     </header>
-    <div>
+    <div style="display: flex;">
 
-      <div>
+      <div style="width: 65%;">
   
         <div *ngIf="btnHeader.quienSoy">
           <app-quien-soy></app-quien-soy>
@@ -56,11 +65,22 @@
     
           <app-preguntados></app-preguntados>
         </div>
+        <div *ngIf="btnHeader.btnJuego4">
+    
+          <app-punteria></app-punteria>
+        </div>
+         <!--
+        <div *ngIf="btnHeader.encuesta">
+    
+          <app-encuesta></app-encuesta>
+        </div>
+        -->
       </div>
   
-      <div id="chat">
+      <div id="chat" style="width: 35%;">
         <br>
         <h1>Chat Alumnos:</h1>
+        <br>
         <app-chat></app-chat>
       </div>
     </div>

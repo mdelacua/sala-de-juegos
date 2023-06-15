@@ -1,0 +1,63 @@
+[
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Naruto Uzumaki"],
+        "id": 17,
+        "personaje": "Naruto Uzumaki"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Monkey D. Luffy"],
+        "id": 40,
+        "personaje": "Monkey D. Luffy"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Edward Elric"],
+        "id": 11,
+        "personaje": "Edward Elric"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Vegeta"],
+        "id": 913,
+        "personaje": "Vegeta"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Spike Spiegel"],
+        "id": 1,
+        "personaje": "Spike Spiegel"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Shinji Ikari"],
+        "id": 89,
+        "personaje": "Shinji Ikari"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Himura Kenshin"],
+        "id": 147,
+        "personaje": "Himura Kenshin"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Roronoa Zoro"],
+        "id": 62,
+        "personaje": "Roronoa Zoro"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["L. Ryuzaki"],
+        "id": 71,
+        "personaje": "L. Ryuzaki"
+    },
+    {
+        "pregunta": "¿Cual es el nombre del personaje?",
+        "respuestas": ["Levi Ackerman"],
+        "id": 45627,
+        "personaje": "Levi Ackerman"
+    }
+    
+]

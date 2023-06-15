@@ -9,11 +9,18 @@ import { UsuariosService } from 'src/app/servicios/usuarios.service';
 })
 export class HomeComponent {
   btnInicio:any = true
-  btnHeader:any = {"btnJuego1" : false,"btnJuego2": false,"btnJuego3": false,"btnCerrarSesion": false,"quienSoy": true }
+  btnHeader:any = {"btnJuego1" : false,
+  "btnJuego2": false,
+  "btnJuego3": false,
+  "btnJuego4": false,
+  "btnCerrarSesion": false,
+  "quienSoy": false,
+  "encuesta": false }
 
   usuario:any = null
 
-  constructor(private servicioUsuario:UsuariosService, private router: Router){
+  constructor(private servicioUsuario:UsuariosService,
+     private router: Router){
            
   router.events.subscribe((val) => {
       

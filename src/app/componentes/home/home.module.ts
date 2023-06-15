@@ -8,25 +8,29 @@ import { AhorcadoComponent } from '../juegos/ahorcado/ahorcado.component';
 import { MayorOMenorComponent } from '../juegos/mayor-o-menor/mayor-o-menor.component';
 import { QuienSoyComponent } from '../quien-soy/quien-soy.component';
 import { ChatComponent } from '../chat/chat.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { PunteriaComponent } from '../juegos/punteria/punteria.component';
+import { EncuestaComponent } from '../encuesta/encuesta.component';
 
-
+import { SweetAlert2Module } from '@sweetalert2/ngx-sweetalert2';
 @NgModule({ 
   declarations: [
-    HomeComponent,
+    HomeComponent, 
     PreguntadosComponent,
     AhorcadoComponent,
     MayorOMenorComponent,
     QuienSoyComponent,
     ChatComponent,
+    PunteriaComponent,
+    EncuestaComponent,
     
-
   ],
   imports: [
     CommonModule,
     HomeRoutingModule,
     FormsModule,
-
+    ReactiveFormsModule,    
+    SweetAlert2Module.forRoot(),
   ]
 })
 export class HomeModule { }

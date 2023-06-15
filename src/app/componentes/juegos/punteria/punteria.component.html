@@ -1,0 +1,86 @@
+
+<div style="display: grid;">
+
+    <div *ngIf="gano > 0">
+        <h2>Victorias: {{gano}}</h2>
+    </div>
+    <!-- 
+    <ng-container *ngIf="partidaPunteria.aciertos == partidaPunteria.intentosTotales; else elseTemplate">
+        <h1>Ganaste!</h1>
+    </ng-container>
+    <ng-template #elseTemplate>
+        
+        <h1 *ngIf="(objetivosJugados -1) == partidaPunteria.intentosTotales" >Perdiste :( </h1>
+    </ng-template>
+    -->
+    <br>
+   
+    <div id="opcionesDificultad">
+    
+        <h3>Dificultad:</h3>
+        <div >
+            <div style="float: left;" >
+                <button [disabled]="btnsDeshabilidatos" [ngClass]="!botonesDificultad.facil ?  'btn btn-primary btn-lg btn-block' : 'btn btn-success btn-lg btn-block' " (click)="AsignarDificultad('facil')">Facil</button>
+                <button [disabled]="btnsDeshabilidatos" [ngClass]="!botonesDificultad.medio ?  'btn btn-primary btn-lg btn-block' : 'btn btn-success btn-lg btn-block' " (click)="AsignarDificultad('medio')">Medio</button>
+                <button [disabled]="btnsDeshabilidatos" [ngClass]="!botonesDificultad.dificil ?  'btn btn-primary btn-lg btn-block' : 'btn btn-success btn-lg btn-block' " (click)="AsignarDificultad('dificil')">Dificil</button>
+            </div>
+           
+        </div>
+    </div>
+
+    <br>
+
+    <div   id="resultados"><!--<div  [style]="!btnsDeshabilidatos ? 'display:none;' : ''" id="resultados"></div>-->
+        <h5>Aciertos: {{partidaPunteria.aciertos}} / {{partidaPunteria.intentosTotales}}</h5>
+          
+        
+     </div>
+
+    <br>
+    
+    <div class="clk_box">
+        <div class="clk_area" id="aimarea">
+    
+            <div id="target" (click)="ClickEnObjetivo()" [style]="objetivosAleatorios" [ngClass]="classObjetivo"></div>
+            
+            <button id="start" (click)="ComenzarJuego()" [style]="comenzarJuego">Haz clic aquí para probar tu puntería</button>
+            
+        </div>
+    </div>
+
+    <br>
+
+    <div id="descripcionJuego">
+    
+        <h3>Descripcion del juego:</h3>     
+        <p>
+            Este juego esta diseñado para que mejores tu agilidad y velocidad con el puntero del mouse.
+        </p>       
+        <p>
+            El objetivo principal para poder ganar es hacer click sobre todos los circulos que aparecen dentro del area marcada,
+        </p>
+        <p>
+            Dependiendo de la dificultad, los circulos desapareceran en un determinado tiempo si no logras hacer click.
+        </p>
+        <p>
+            Para ganar el juego debes hacer {{partidaPunteria.intentosTotales}} aciertos de {{partidaPunteria.intentosTotales}} intentos totales (100% de aciertos)
+        </p>
+
+        <br>
+
+        <h3>Dificultades:</h3>      
+        <h6>Facil:</h6>
+        <p>
+            Los objetivos a clickear son grandes y tardan 5 segundos en desaparecer
+        </p>
+        <h6>Medio:</h6>
+        <p>
+            Los objetivos a clickear son medianos y tardan 3 segundos en desaparecer
+        </p>
+        <h6>Dificil:</h6>
+        <p>
+            Los objetivos a clickear son pequeños y tarda 1 segundo en desaparecer
+        </p>
+    </div>
+</div>
+<input type="submit" style="display:none" class="fadeIn fourth" value="Usuario 1"  [swal]="['Oops!', 'This is not implemented yet :/', 'warning']">
